@@ -390,3 +390,46 @@ body {
     padding: 5px;
   }
 }
+
+/* Historical Context Section */
+.context-section {
+  margin-bottom: 50px;
+}
+
+.context-section h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.context-section > p {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.context-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.fact-card {
+  background-color: #F8FAFC;
+  border-left: 4px solid var(--card-border);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.fact-card h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.fact-card p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+}
