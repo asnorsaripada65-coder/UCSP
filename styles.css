@@ -1,11 +1,11 @@
 :root {
-  --bg-dark: #1E293B;      /* Deep Slate Blue (for Hero overlay) */
-  --bg-light: #F8FAFC;     /* Very light cool grey/sand for page background */
-  --text-dark: #0F172A;    /* Dark slate for text */
-  --text-light: #F8FAFC;   /* White/light text */
-  --card-bg: #FFFFFF;      /* Pure white for cards */
-  --card-border: #CBD5E1;  /* Light grey border */
-  --accent: #334155;       /* Slate Blue for buttons and icons */
+  --bg-dark: #1E293B;
+  --bg-light: #F8FAFC;
+  --text-dark: #0F172A;
+  --text-light: #F8FAFC;
+  --card-bg: #FFFFFF;
+  --card-border: #CBD5E1;
+  --accent: #334155;
   --accent-hover: #0F172A;
 }
 
@@ -25,7 +25,7 @@ body {
 /* Hero Header */
 .hero {
   background-image: 
-    linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.9)), /* Slate blue overlay */
+    linear-gradient(rgba(30, 41, 59, 0.7), rgba(30, 41, 59, 0.9)), 
     url('baybars-bg.jpg');
   background-size: cover;
   background-position: center 25%;
@@ -47,6 +47,31 @@ body {
   font-size: 1.2rem;
   color: #e2e8f0;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+/* Quote Banner */
+.quote-banner {
+  background-color: #E2E8F0;
+  padding: 30px 20px;
+  text-align: center;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.quote-banner blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  color: var(--text-dark);
+}
+
+.quote-banner cite {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  font-style: normal;
+  color: var(--accent);
 }
 
 /* Main Container */
@@ -142,6 +167,119 @@ body {
   padding-top: 15px;
 }
 
+/* Timeline Section */
+.timeline-section {
+  margin-bottom: 50px;
+}
+
+.timeline-section h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-left: 30px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--card-border);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -38px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--accent);
+  border: 3px solid var(--bg-light);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.timeline-content {
+  background-color: var(--card-bg);
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.timeline-date {
+  display: block;
+  font-weight: bold;
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.timeline-content p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Sociological Impact Section */
+.sociology-section {
+  margin-bottom: 50px;
+}
+
+.sociology-section h2 {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.socio-intro {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.socio-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.socio-card {
+  background-color: #F1F5F9;
+  border-left: 4px solid var(--accent);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+.socio-card h3 {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.socio-card p {
+  font-size: 0.95rem;
+  color: #334155;
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* About Section */
 .about-section {
   background-color: #F1F5F9;
@@ -193,7 +331,7 @@ body {
 .video-container {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   background-color: #000;
   border: 2px solid var(--card-border);
   border-radius: 8px;
@@ -215,12 +353,12 @@ body {
   font-weight: bold;
 }
 
-/* Memory Game Styles */
+/* Memory Game Styles (FIXED FOR MOBILE) */
 .game-section {
   background-color: var(--card-bg);
   border: 2px solid var(--card-border);
   border-radius: 8px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   margin-bottom: 50px;
 }
@@ -239,9 +377,9 @@ body {
 
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr; /* 2x2 grid instead of 4x4 */
   gap: 10px;
-  max-width: 500px;
+  width: 100%;
   margin: 0 auto 20px;
 }
 
@@ -249,19 +387,21 @@ body {
   background-color: var(--accent);
   color: white;
   border-radius: 6px;
-  aspect-ratio: 1 / 1;
+  height: 120px; /* Fixed height instead of aspect ratio to prevent stretching */
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: bold;
   text-align: center;
   user-select: none;
   transition: background-color 0.2s, color 0.2s;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-  line-height: 1.3;
+  line-height: 1.2;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .memory-card:hover {
@@ -273,6 +413,7 @@ body {
   color: var(--text-dark);
   border: 2px solid var(--accent);
   cursor: default;
+  font-size: 0.75rem; /* Smaller text when flipped so it fits */
 }
 
 .memory-card.matched {
@@ -374,62 +515,23 @@ body {
   color: #CBD5E1;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .card-title {
-    font-size: 1.1rem;
-  }
-  .memory-game {
-    gap: 8px;
-  }
-  .memory-card {
-    font-size: 0.75rem;
-    padding: 5px;
-  }
-}
-
-/* Historical Context Section */
-.context-section {
-  margin-bottom: 50px;
-}
-
-.context-section h2 {
-  font-size: 1.8rem;
-  color: var(--accent);
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.context-section > p {
-  text-align: center;
-  color: #475569;
-  margin-bottom: 25px;
-}
-
-.context-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.fact-card {
-  background-color: #F8FAFC;
-  border-left: 4px solid var(--card-border);
-  padding: 20px;
+/* Introduction Section */
+.introduction-section {
+  background-color: #F1F5F9;
+  border-left: 4px solid var(--accent);
+  padding: 25px;
   border-radius: 0 8px 8px 0;
+  margin-bottom: 40px;
 }
 
-.fact-card h3 {
+.introduction-section h2 {
+  font-size: 1.6rem;
   color: var(--accent);
-  font-size: 1.2rem;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
-.fact-card p {
-  font-size: 0.95rem;
-  color: #475569;
-  line-height: 1.5;
+.introduction-section p {
+  font-size: 1rem;
+  color: #334155;
+  line-height: 1.6;
 }
